@@ -2,6 +2,7 @@
 
 from pytube import YouTube
 import tkinter as tk
+import threading
 
 # Create an instance of tkinter frame or window
 window = tk.Tk()
@@ -25,6 +26,10 @@ res_button3.deselect()
 res_button3.pack()
 
 
+def donwload_separate_thread():
+    threading.Thread(target=downloader).start()
+
+
 def downloader():  # defining a function
     t = text.get()  # getting the value
     video = YouTube(t)
@@ -33,6 +38,6 @@ def downloader():  # defining a function
     tk.Label(window, text="Downloaded Successfully").pack()
 
 
-tk.Button(window, text="Download", bg='green', command=downloader).pack()
+tk.Button(window, text="Download", bg='green', command=donwload_separate_thread).pack()
 
 window.mainloop()
