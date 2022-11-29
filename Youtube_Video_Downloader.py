@@ -16,13 +16,11 @@ tk.Label(window, text="YOUTUBE VIDEO DOWNLOADER", bg='grey', font='Calibre 15').
 tk.Label(window, text="Enter the link to download", font='Calibre 12').pack()  # a label
 tk.Entry(window, textvariable=text, width=50).pack()  # entry field
 res_button1 = tk.Radiobutton(window, text='360p', value='360p', variable=res)
-res_button1.deselect()
+res_button1.select()
 res_button1.pack()  # creating checkbox
 res_button2 = tk.Radiobutton(window, text='720p', value='720p', variable=res)
-res_button2.deselect()
 res_button2.pack()
 res_button3 = tk.Radiobutton(window, text='1080p', value='1080p', variable=res)
-res_button3.deselect()
 res_button3.pack()
 
 
